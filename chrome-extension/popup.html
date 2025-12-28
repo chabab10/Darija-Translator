@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Darija Translator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 12px; }
+    button { margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h3>Darija Translator</h3>
+  <p>Open the side panel to translate English to Darija instantly!</p>
+  <button id="openPanelBtn">Open Side Panel</button>
+  <script>
+    document.getElementById('openPanelBtn').onclick = () => {
+      if (chrome.sidePanel) {
+        chrome.sidePanel.open({ windowId: chrome.windows.WINDOW_ID_CURRENT });
+      } else {
+        alert('Side panel API not available.');
+      }
+    };
+  </script>
+</body>
+</html>
